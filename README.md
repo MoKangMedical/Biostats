@@ -15,6 +15,34 @@ Biostats is an open-source biostatistics platform that combines classical statis
 - **AI Interpretation** — Plain-language explanations of statistical results
 - **Publication Engine** — Auto-generate publication-ready tables and figures
 
+## 🧠 技术哲学：Harness理论
+
+> **在AI领域，Harness（环境设计）比模型本身更重要。优秀的Harness设计（工具链+信息格式+上下文管理+失败恢复+结果验证）能使性能提升64%。**
+
+Biostats的本质是**生物统计Harness**——不是堆更复杂的统计公式，而是设计好从原始数据到发表级结果的全流程：
+
+- **数据处理Harness**：自动识别数据类型→缺失值处理→异常值检测→格式标准化
+- **方法选择Harness**：研究设计识别→统计方法推荐→假设检验匹配→结果解读
+- **可视化Harness**：数据特征→图表推荐→发表级渲染→报告自动生成
+- **质量验证Harness**：假设检查→多重比较校正→敏感性分析→可重复性保证
+
+**护城河来源**：生物统计的Harness设计，而非统计软件本身。
+
+## 💼 商业哲学：红杉论点
+
+> **下一代万亿美元公司是伪装成服务公司的软件公司。从卖工具到卖结果。**
+
+Biostats不卖统计软件或代码模板——卖的是**科研分析的结果**：研究者上传数据，直接获得可发表的统计分析报告。从卖SPSS/R工具到卖一站式科研统计服务。
+
+## 🧭 理论宪法关联
+
+Biostats遵循莫康医学理论宪法（THEORETICAL_CONSTITUTION.md）四卷八章统一框架：
+
+- **认知论**：鉴别诊断式决策 → 数据驱动的研究假设验证
+- **方法论**：Harness理论 → 生物统计Harness（数据处理+方法选择+可视化+质量验证）
+- **价值论**：红杉论点 → 卖科研统计结果（不是卖统计工具）
+- **价值论**：思想基础设施理论 → Level 4 生物统计基础设施
+
 ## 🚀 Quick Start
 
 ```bash
