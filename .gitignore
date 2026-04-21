@@ -5,3 +5,12 @@ _data/
 *.egg-info/
 dist/
 build/
+
+# Environment — Hermes安全规则
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*_secret*
+credentials.json
