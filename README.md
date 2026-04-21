@@ -1,106 +1,277 @@
-# Biostats — AI-Powered Biostatistics Platform
+# Biostats
 
-> Clinical trial design, survival analysis, and statistical inference powered by AI. Built for biopharma teams who need rigorous, publication-ready results — fast.
+医疗AI项目
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+## 项目简介
 
-## 🎯 What is Biostats?
+这是一个医疗AI项目，致力于通过人工智能技术解决医疗健康领域的挑战。
 
-Biostats is an open-source biostatistics platform that combines classical statistical methods with AI-powered interpretation. It provides:
+## 功能特性
 
-- **Survival Analysis** — Kaplan-Meier, Cox PH, competing risks
-- **Clinical Trial Design** — Sample size, power analysis, adaptive designs
-- **Bayesian Methods** — Posterior estimation, Bayesian adaptive trials
-- **AI Interpretation** — Plain-language explanations of statistical results
-- **Publication Engine** — Auto-generate publication-ready tables and figures
+### 核心功能
+- 🏥 医疗AI核心功能
+- 🔬 智能诊断与分析
+- 📊 数据可视化与报告
+- 🤖 多模态交互支持
+- 🔒 数据安全与隐私保护
 
-## 🧠 技术哲学：Harness理论
+### 技术特性
+- 🚀 高性能计算
+- 📈 可扩展架构
+- 🔄 实时数据处理
+- 🌐 分布式部署
+- 📱 多平台支持
 
-> **在AI领域，Harness（环境设计）比模型本身更重要。优秀的Harness设计（工具链+信息格式+上下文管理+失败恢复+结果验证）能使性能提升64%。**
+## 技术栈
 
-Biostats的本质是**生物统计Harness**——不是堆更复杂的统计公式，而是设计好从原始数据到发表级结果的全流程：
+### 后端技术
+- **框架**: Python FastAPI, Django, Flask
+- **AI框架**: TensorFlow, PyTorch, Scikit-learn
+- **数据库**: PostgreSQL, MongoDB, Redis
+- **消息队列**: RabbitMQ, Kafka
+- **容器化**: Docker, Kubernetes
 
-- **数据处理Harness**：自动识别数据类型→缺失值处理→异常值检测→格式标准化
-- **方法选择Harness**：研究设计识别→统计方法推荐→假设检验匹配→结果解读
-- **可视化Harness**：数据特征→图表推荐→发表级渲染→报告自动生成
-- **质量验证Harness**：假设检查→多重比较校正→敏感性分析→可重复性保证
+### 前端技术
+- **框架**: React, Vue.js, Angular
+- **UI库**: Ant Design, Material-UI, Element UI
+- **可视化**: D3.js, ECharts, Plotly
+- **移动端**: React Native, Flutter
 
-**护城河来源**：生物统计的Harness设计，而非统计软件本身。
+### 数据处理
+- **分析**: Pandas, NumPy, SciPy
+- **可视化**: Matplotlib, Seaborn, Plotly
+- **大数据**: Spark, Hadoop
+- **流处理**: Flink, Storm
 
-## 💼 商业哲学：红杉论点
+## 快速开始
 
-> **下一代万亿美元公司是伪装成服务公司的软件公司。从卖工具到卖结果。**
+### 环境要求
 
-Biostats不卖统计软件或代码模板——卖的是**科研分析的结果**：研究者上传数据，直接获得可发表的统计分析报告。从卖SPSS/R工具到卖一站式科研统计服务。
+- Python 3.9+
+- Node.js 16+
+- Docker 20+
+- Git 2.30+
 
-## 🧭 理论宪法关联
+### 安装步骤
 
-Biostats遵循莫康医学理论宪法（THEORETICAL_CONSTITUTION.md）四卷八章统一框架：
-
-- **认知论**：鉴别诊断式决策 → 数据驱动的研究假设验证
-- **方法论**：Harness理论 → 生物统计Harness（数据处理+方法选择+可视化+质量验证）
-- **价值论**：红杉论点 → 卖科研统计结果（不是卖统计工具）
-- **价值论**：思想基础设施理论 → Level 4 生物统计基础设施
-
-## 🚀 Quick Start
-
+1. **克隆仓库**
 ```bash
-pip install biostats
-
-# Survival analysis
-from biostats import Survival
-km = Survival.kaplan_meier(time=[3,6,9,12], event=[1,0,1,1])
-km.plot()
-km.summary()  # AI-generated plain-language interpretation
-
-# Sample size calculation
-from biostats import TrialDesign
-design = TrialDesign.two_arm(
-    effect_size=0.3, alpha=0.05, power=0.80
-)
-print(design.sample_size)  # → 176 per arm
-
-# Bayesian analysis
-from biostats import Bayesian
-posterior = Bayesian.bernoulli(
-    successes=45, trials=100, prior_beta=(1, 1)
-)
-posterior.credible_interval(0.95)  # → (0.353, 0.549)
+git clone https://github.com/MoKangMedical/Biostats.git
+cd Biostats
 ```
 
-## 📊 Core Modules
+2. **后端设置**
+```bash
+# 创建虚拟环境
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
 
-| Module | Description | Status |
-|--------|-------------|--------|
-| `biostats.survival` | KM, Cox PH, Fine-Gray, IPCW | ✅ Stable |
-| `biostats.trial` | Sample size, power, adaptive designs | ✅ Stable |
-| `biostats.bayesian` | MCMC, conjugate priors, model comparison | ✅ Stable |
-| `biostats.regression` | Linear, logistic, Poisson, mixed models | 🔨 Beta |
-| `biostats.meta` | Fixed/random effects meta-analysis | 🔨 Beta |
-| `biostats.interpret` | AI-powered result interpretation | ✅ Stable |
-| `biostats.publish` | Publication-ready tables & figures | 🔨 Beta |
+# 安装依赖
+pip install -r requirements.txt
 
-## 🧬 Use Cases
+# 配置环境变量
+cp .env.example .env
+# 编辑.env文件，配置数据库连接等
+```
 
-- **Phase II/III Clinical Trials** — Design, interim analysis, sample size re-estimation
-- **Real-World Evidence** — Propensity score matching, IPTW, instrumental variables
-- **Meta-Analysis** — Forest plots, heterogeneity assessment, publication bias
-- **Health Economics** — Cost-effectiveness analysis, QALY estimation
-- **Epidemiology** — Incidence rates, standardized mortality ratios, time-series
+3. **前端设置**
+```bash
+cd frontend
+npm install
+npm run build
+```
 
-## 📖 Documentation
+4. **数据库设置**
+```bash
+# 初始化数据库
+python manage.py migrate
+python manage.py createsuperuser
+```
 
-Full documentation: [biostats.readthedocs.io](https://biostats.readthedocs.io)
+5. **启动服务**
+```bash
+# 使用Docker Compose（推荐）
+docker-compose up -d
 
-## 🤝 Contributing
+# 或手动启动
+python manage.py runserver
+```
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## 项目结构
 
-## 📄 License
+```
+Biostats/
+├── backend/                 # 后端代码
+│   ├── api/                # API接口
+│   ├── models/             # 数据模型
+│   ├── services/           # 业务逻辑
+│   ├── utils/              # 工具函数
+│   └── tests/              # 测试用例
+├── frontend/               # 前端代码
+│   ├── src/               # 源代码
+│   ├── public/            # 静态资源
+│   └── package.json       # 依赖配置
+├── ai-engine/             # AI引擎
+│   ├── models/           # AI模型
+│   ├── training/         # 训练脚本
+│   └── inference/        # 推理服务
+├── data/                  # 数据存储
+│   ├── raw/              # 原始数据
+│   ├── processed/        # 处理后的数据
+│   └── models/           # 训练好的模型
+├── docs/                  # 项目文档
+│   ├── api/              # API文档
+│   ├── user/             # 用户手册
+│   └── dev/              # 开发文档
+├── scripts/               # 脚本工具
+│   ├── deploy/           # 部署脚本
+│   ├── data/             # 数据处理脚本
+│   └── utils/            # 工具脚本
+├── tests/                 # 测试代码
+├── docker-compose.yml     # Docker编排
+├── Dockerfile            # Docker配置
+├── requirements.txt      # Python依赖
+├── .env.example          # 环境变量示例
+├── .gitignore           # Git忽略文件
+└── README.md            # 项目说明
+```
 
-MIT License — see [LICENSE](LICENSE) for details.
+## API文档
+
+### 主要接口
+
+#### 基础接口
+- `GET /` - 首页
+- `GET /health` - 健康检查
+- `GET /api/v1/status` - 系统状态
+
+#### 数据接口
+- `GET /api/v1/data` - 获取数据列表
+- `POST /api/v1/data` - 上传数据
+- `GET /api/v1/data/<built-in function id>` - 获取特定数据
+
+#### 分析接口
+- `POST /api/v1/analyze` - 数据分析
+- `GET /api/v1/analyze/<built-in function id>` - 获取分析结果
+- `GET /api/v1/reports` - 获取报告列表
+
+#### 用户接口
+- `POST /api/v1/auth/login` - 用户登录
+- `POST /api/v1/auth/register` - 用户注册
+- `GET /api/v1/users/me` - 获取当前用户信息
+
+### 详细文档
+
+启动服务后，访问以下地址查看完整API文档：
+
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+- **OpenAPI JSON**: http://localhost:8000/openapi.json
+
+## 配置说明
+
+### 环境变量
+
+创建 `.env` 文件并配置以下变量：
+
+```bash
+# 基础配置
+DEBUG=True
+SECRET_KEY=your-secret-key
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# 数据库配置
+DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+REDIS_URL=redis://localhost:6379/0
+
+# AI服务配置
+OPENAI_API_KEY=your-openai-key
+HUGGINGFACE_TOKEN=your-hf-token
+
+# 文件存储配置
+AWS_ACCESS_KEY_ID=your-aws-key
+AWS_SECRET_ACCESS_KEY=your-aws-secret
+AWS_STORAGE_BUCKET_NAME=your-bucket-name
+
+# 邮件配置
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_HOST_USER=your-email@gmail.com
+EMAIL_HOST_PASSWORD=your-email-password
+```
+
+## 部署指南
+
+### Docker部署（推荐）
+
+1. **构建镜像**
+```bash
+docker build -t Biostats .
+```
+
+2. **运行容器**
+```bash
+docker run -d -p 8000:8000 --name Biostats Biostats
+```
+
+3. **使用Docker Compose**
+```bash
+docker-compose up -d
+```
+
+## 测试
+
+### 运行测试
+
+```bash
+# 运行所有测试
+python -m pytest tests/
+
+# 运行特定测试
+python -m pytest tests/test_api.py
+
+# 生成测试覆盖率报告
+python -m pytest --cov=app tests/
+```
+
+## 贡献指南
+
+我们欢迎任何形式的贡献！请遵循以下步骤：
+
+1. **Fork本仓库**
+2. **创建特性分支**
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+3. **提交更改**
+```bash
+git commit -m 'Add some AmazingFeature'
+```
+
+4. **推送到分支**
+```bash
+git push origin feature/AmazingFeature
+```
+
+5. **创建Pull Request**
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE) 许可证。
+
+## 联系方式
+
+- **项目维护者**: MoKangMedical
+- **邮箱**: contact@mokangmedical.com
+- **项目主页**: https://github.com/MoKangMedical/Biostats
+- **问题反馈**: https://github.com/MoKangMedical/Biostats/issues
+
+## 致谢
+
+感谢所有为这个项目做出贡献的开发者和医疗领域专家！
 
 ---
 
-**Built with ❤️ by MoKangMedical**
+**注意**: 这是一个活跃开发中的项目，API和功能可能会发生变化。请定期查看更新日志获取最新信息。
